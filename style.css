@@ -1,0 +1,216 @@
+:root {
+    /* Fonts: */
+    --poppins: 'Poppins', sans-serif;
+    --font-thin: 100;
+    --font-regular: 400;
+    --font-semi-bold: 600;
+    --standard-gap: 30px;
+    --dark: rgba(76, 76, 97, 1);
+
+    /* Colors */
+    --red: rgba(234, 83, 83, 1);
+    --cyan: rgba(69, 211, 211, 1);
+    --orange: rgba(252, 169, 74, 1);
+    --blue: rgba(84, 158, 242, 1);
+    --red-light: rgba(247, 217, 217, 1);
+    --cyan-light: rgba(214, 242, 242, 1);
+    --orange-light: rgba(250, 234, 215, 1);
+    --blue-light: rgba(217, 232, 248, 1);
+
+    /* border */
+    --small-radius: 5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--poppins);
+    font-weight: var(--font-regular);
+    color: var(--dark);
+    transition: 0.3s;
+}
+
+.font-thin {
+    font-weight: var(--font-thin);
+}
+
+.font-semi-bold {
+    font-weight: var(--font-semi-bold);
+}
+
+.red {
+    border-color: var(--red);
+}
+
+.red:hover {
+    background-color: var(--red-light);
+}
+
+.cyan {
+    border-color: var(--cyan);
+}
+
+.cyan:hover {
+    background-color: var(--cyan-light);
+}
+
+.orange {
+    border-color: var(--orange);
+}
+
+.orange:hover {
+    background-color: var(--orange-light);
+}
+
+.blue {
+    border-color: var(--blue);
+}
+
+.blue:hover {
+    background-color: var(--blue-light);
+}
+
+.dark {
+    border-color: var(--dark);
+}
+
+.shadow-box {
+    -webkit-box-shadow: 0px 15px 15px 0px rgba(66, 68, 90, 0.3);
+    -moz-box-shadow: 0px 15px 15px 0px rgba(66, 68, 90, 0.3);
+    box-shadow: 0px 15px 15px 0px rgba(66, 68, 90, 0.3);
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--standard-gap);
+}
+
+body {
+    background-color: rgba(237, 229, 215, 1);
+    padding: 50px 5vw;
+}
+
+section#card {
+    margin: auto;
+    max-width: 1440px;
+    padding: 5%;
+    background-color: #FAFAFA;
+    border-radius: var(--small-radius);
+    border-top-width: 5px;
+    border-top-style: solid;
+}
+
+section#card .info-wrapper * {
+    text-align: center;
+    margin: auto;
+}
+
+section#card .info-wrapper h1 {
+    font-size: 30px;
+}
+
+section#card .info-wrapper h1 span.font-thin {
+    font-size: 25px;
+}
+
+section#card .info-wrapper p {
+    font-size: 20px;
+    max-width: 700px;
+}
+
+section#card .card-wrapper {
+    display: flex;
+    margin-top: 30px;
+}
+
+section#card .card-wrapper ul.column {
+    list-style-type: none;
+    width: 33%;
+    padding: 0 15px;
+}
+
+section#card .card-wrapper ul.column li {
+    width: 100%;
+    padding: 30px;
+    border-radius: var(--small-radius);
+    border-top-width: 5px;
+    border-top-style: solid;
+    cursor: pointer;
+}
+
+section#card .card-wrapper ul.column li:hover {
+    transform: scale(1.05) rotate(3deg);
+    -webkit-box-shadow: 9px 15px 20px 0px rgba(66, 68, 90, 0.5);
+    -moz-box-shadow: 9px 15px 20px 0px rgba(66, 68, 90, 0.5);
+    box-shadow: 9px 15px 20px 0px rgba(66, 68, 90, 0.5);
+}
+
+section#card .card-wrapper ul.column li p {
+    max-width: 80%;
+}
+
+section#card .card-wrapper ul.column li img {
+    width: 35%;
+    align-self: flex-end;
+}
+
+section#card .card-wrapper ul.column li:hover img {
+    transform: scale(1.1) rotate(10deg);
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(66, 68, 90, 0.5));
+    filter: drop-shadow(5px 5px 5px rgba(66, 68, 90, 0.5));
+}
+
+@media (max-width: 1064px) {
+
+    section#card {
+        padding: 10% 5%;
+    }
+
+    section#card .card-wrapper {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    section#card .card-wrapper ul.column {
+        width: 100%;
+    }
+
+    section#card .card-wrapper ul.column li {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    section#card .card-wrapper ul.column li img {
+        width: 15%;
+    }
+
+}
+
+@media (max-width: 750px) {
+
+    body {
+        padding: 0;
+    }
+
+    section#card {
+        padding: 15% 5%;
+    }
+
+    section#card .card-wrapper ul.column li {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    section#card .card-wrapper ul.column li div {
+        align-items: center;
+    }
+
+    section#card .card-wrapper ul.column li img {
+        width: 15%;
+        min-width: 80px;
+        align-self: center
+    }
+}
